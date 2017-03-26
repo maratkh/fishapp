@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Config;
 
 /**
  * Class ImagePost
@@ -22,6 +23,6 @@ class ImagePost extends Model
 
     public function getSrcAttribute($value)
     {
-        return "http://fishapp/upload/".($value);
+        return Config::get('app.url')."/upload/".($value);
     }
 }
